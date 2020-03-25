@@ -10,6 +10,38 @@ After downloading this file, the fastest way to start this simulator is to start
 Assets/BarProps/Scenes/Demo.unity
 ```
 
+At this point, there is no function to play the series of animations. The instructions below shows how to apply a single animation to the character.
+
+## Insturction: How to apply animation to character
+
+![](Images/Instruction001.jpg)
+
+1. After opening Demo.unity file, click the character that you want to apply an animation
+
+![](Images/Instruction002.jpg)
+
+2. Double click the Controller component
+
+![](Images/Instruction003.jpg)
+
+3. In Animator, double click the orange box
+
+![](Images/Instruction004.jpg)
+
+4. Click the rightmost icon at Inspector/Motion
+
+![](Images/Instruction005.jpg)
+
+5. Select the animation that you want to apply
+
+![](Images/Instruction006.jpg)
+
+6. Play the Unity Engine
+
+![](Images/Instruction007.jpg)
+
+7. See how animations is applied to the character you selected
+
 ## Built With
 
 * [Unity](https://unity.com/) - 3D Game Engine that controls Characters/Scenarios
