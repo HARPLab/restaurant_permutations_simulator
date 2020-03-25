@@ -4,7 +4,11 @@ Unity version of the simulator that controls customers' non-verbal behaviors and
 
 ## Getting Started
 
-After downloading this file, the fastest way to start this simulator is to access to the Assets/BarProps/Scenes directory, and start the Demo.unity file.
+After downloading this file, the fastest way to start this simulator is to start
+
+```
+Assets/BarProps/Scenes/Demo.unity
+```
 
 ## Built With
 
