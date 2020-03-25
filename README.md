@@ -4,11 +4,15 @@ Unity version of the simulator that controls customers' non-verbal behaviors and
 
 ## Getting Started
 
-After downloading this file, the fastest way to start this simulator is to access to the Assets/BarProps/Scenes directory, and start the Demo.unity file.
+After downloading this file, the fastest way to start this simulator is to start
+
+```
+Assets/BarProps/Scenes/Demo.unity
+```
 
 ## Built With
 
 * [Unity](https://unity.com/) - 3D Game Engine that controls Characters/Scenarios
 * [Blender](https://www.blender.org/) - Used for creating the custom animations for 3D characters
 * [Unity Asset Store](https://assetstore.unity.com/) - Downloaded/Imported Restaurant & Food Assets
-* [Adobe Mixamo](https://www.mixamo.com/) - Downloaded/Imported high quality 3D animations
+* [Adobe Mixamo](https://www.mixamo.com/) - Downloaded/Imported high quality 3D characters
