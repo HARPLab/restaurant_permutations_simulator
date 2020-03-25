@@ -8,7 +8,7 @@ After downloading this file, the fastest way to start this simulator is to acces
 
 ## Built With
 
-* [Unity](https://unity.com/)
+* [Unity](https://unity.com/) - 3D Game Engine that controls Characters/Scenarios
 * [Blender](https://www.blender.org/) - Used for creating the custom animations for 3D characters
 * [Unity Asset Store](https://assetstore.unity.com/) - Downloaded/Imported Restaurant & Food Assets
 * [Adobe Mixamo](https://www.mixamo.com/) - Downloaded/Imported high quality 3D animations
