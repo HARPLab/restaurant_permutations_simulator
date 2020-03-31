@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: 4990e4895b3e79044af9ba99cce2afcd
+guid: 42604079d55cf864aa81bcf2f0a3b5bc
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: -6118405517246218261
-    second: ManRaiseHand|Hands_Down_From_RightTurn
-  - first:
-      74: -6462234194583028101
-    second: ManRaiseHand|Turn_Right_Raise_Hand
+      74: -8257204038547889242
+    second: Man/Idle|StandIdle
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -29,7 +26,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -89,13 +86,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
