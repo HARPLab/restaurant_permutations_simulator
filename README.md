@@ -14,6 +14,8 @@ After downloading this file, the fastest way to start this simulator is to start
 Assets/BarProps/Scenes/Demo.unity
 ```
 
+To run this simulator, you should download Unity. This simulator is developed in Unity 2019.3.2f1 version.
+
 At this point, there is no function to play the series of animations. The instructions below shows how to apply a single animation to the character.
 
 ## Insturction: How to apply animation to character
