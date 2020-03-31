@@ -2,6 +2,10 @@
 
 Unity version of the simulator that controls customers' non-verbal behaviors and scenario of the serving food in the restaruant
 
+## Preview
+
+![](UpdateLog/MiniScenarios/Mini_Scenario_1.gif)
+
 ## Getting Started
 
 After downloading this file, the fastest way to start this simulator is to start
