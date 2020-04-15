@@ -5,9 +5,12 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour
 {
     public Transform target;
+    public GameObject this_character;
+    public GameObject next_character;
     public float speed;
     private Animator anim;
     private int stage;
+
 
     void Start()
     {
@@ -31,10 +34,13 @@ public class Waypoint : MonoBehaviour
             }
         }
 
-        if (stage == 2)
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("End"))
         {
-
+            this_character.SetActive(false);
+            next_character.SetActive(true);
         }
+
+
 
 
     }
