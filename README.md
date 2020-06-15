@@ -4,9 +4,7 @@ Unity version of the simulator that controls customers' non-verbal behaviors and
 
 ## Preview
 
-![](UpdateLog/MiniScenarios/Mini_Scenario_1.gif)
-![](UpdateLog/MiniScenarios/Mini_Scenario_2.gif)
-![](UpdateLog/MiniScenarios/Mini_Scenario_3.gif)
+![](UpdateLog/FullScenarios/FullScenario1.gif)
 
 ## Getting Started
 
