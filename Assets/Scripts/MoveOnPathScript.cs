@@ -10,7 +10,7 @@ public class MoveOnPathScript : MonoBehaviour
     
     public int CurrentWayPointID = 0;
     public float speed;
-    private float reachDistance = 1.0f;
+    private float reachDistance = 0.5f;
     public float rotationSpeed = 5.0f;
     public string pathName;
     private Animator anim;
@@ -37,7 +37,7 @@ public class MoveOnPathScript : MonoBehaviour
         //while the server is moving
         if(stage == 1){
             anim.SetBool("isWalking", true);
-            Debug.Log("walking");
+           // Debug.Log("walking");
         
     
             float distance = Vector3.Distance(PathToFollow.path_objs[CurrentWayPointID].position, transform.position);
@@ -61,7 +61,7 @@ public class MoveOnPathScript : MonoBehaviour
         if(stage == 2)
         {
             anim.SetBool("isWalking", false);
-            Debug.Log("idle");
+            //Debug.Log("idle");
         }
     }
 }
