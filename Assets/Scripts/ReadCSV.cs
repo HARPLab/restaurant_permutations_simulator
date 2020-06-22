@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-
-public class EditPathScript : MonoBehaviour
+public class ReadCSV : MonoBehaviour
 {
-    public List<Transform> path_objs = new List<Transform>();
-    Transform[] theArray;
-
+    public Transform[] Waypoints;
+    // Start is called before the first frame update
     void Start()
     {
         ReadCSVFile();
     }
+
     
     void ReadCSVFile()
     {
         StreamReader strReader = new StreamReader("Assets/Scripts/TesterWaypoints.csv");
         bool endOfFile = false;
-        int i = 0;
         while(!endOfFile)
         {
             string data_string = strReader.ReadLine();
@@ -28,19 +26,7 @@ public class EditPathScript : MonoBehaviour
                 break;
             }
             var data_values = data_string.Split(',');
-            
-            GameObject emptyGameObj = new GameObject("PathPoint" + i.ToString());
-            emptyGameObj.transform.parent = this.gameObject.transform;
-            
-            //need to convert data_values into something
-            emptyGameObj.transform.position = new Vector3(float.Parse(data_values[0]), float.Parse(data_values[1]), float.Parse(data_values[2]));
-            
-            path_objs.Add(emptyGameObj.transform);
-            
-            
             Debug.Log(data_values[0].ToString() + " " + data_values[1].ToString() + " " + data_values[2].ToString() );
         }
     }
-    
-    
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MoveOnPathScript : MonoBehaviour
 {
 
@@ -33,26 +34,34 @@ public class MoveOnPathScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //animation
+        //while the server is moving
         if(stage == 1){
-            anim.SetBool("IsWalking", true);
+            anim.SetBool("isWalking", true);
+            Debug.Log("walking");
+        
+    
+            float distance = Vector3.Distance(PathToFollow.path_objs[CurrentWayPointID].position, transform.position);
+            transform.position = Vector3.MoveTowards(transform.position, PathToFollow.path_objs[CurrentWayPointID].position, Time.deltaTime * speed);
+
+            var rotation = Quaternion.LookRotation(PathToFollow.path_objs[CurrentWayPointID].position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+
+            if(distance <= reachDistance)
+            {
+                CurrentWayPointID++;
+            }
+            
+            if(CurrentWayPointID >= PathToFollow.path_objs.Count)
+            {
+                stage = 2;
+            }
         }
         
-        
-        float distance = Vector3.Distance(PathToFollow.path_objs[CurrentWayPointID].position, transform.position);
-        transform.position = Vector3.MoveTowards(transform.position, PathToFollow.path_objs[CurrentWayPointID].position, Time.deltaTime * speed);
-        
-        var rotation = Quaternion.LookRotation(PathToFollow.path_objs[CurrentWayPointID].position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-        
-        if(distance <= reachDistance)
+        //server has reached stopping point
+        if(stage == 2)
         {
-            CurrentWayPointID++;
-        }
-        
-        if(CurrentWayPointID >= PathToFollow.path_objs.Count)
-        {
-            CurrentWayPointID = 0;
+            anim.SetBool("isWalking", false);
+            Debug.Log("idle");
         }
     }
 }
