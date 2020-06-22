@@ -9,12 +9,13 @@ public class ReadCSV : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ReadCSVFile();
+        //ReadCSVFile();
     }
 
     
     void ReadCSVFile()
     {
+        Debug.Log("Start");
         StreamReader strReader = new StreamReader("Assets/Scripts/TesterWaypoints.csv");
         bool endOfFile = false;
         while(!endOfFile)
@@ -27,6 +28,7 @@ public class ReadCSV : MonoBehaviour
             }
             var data_values = data_string.Split(',');
             Debug.Log(data_values[0].ToString() + " " + data_values[1].ToString() + " " + data_values[2].ToString() );
+            Debug.Log("Done");
         }
     }
 }

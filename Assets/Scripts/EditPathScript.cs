@@ -32,8 +32,16 @@ public class EditPathScript : MonoBehaviour
             GameObject emptyGameObj = new GameObject("PathPoint" + i.ToString());
             emptyGameObj.transform.parent = this.gameObject.transform;
             
+            Debug.Log("here" + data_values[0]);
+            float x = float.Parse(data_values[0]);
+            Debug.Log(x);
+            float y = float.Parse(data_values[1]);
+            Debug.Log(y);
+            float z = float.Parse(data_values[2]);
+            Debug.Log(z);
+            
             //need to convert data_values into something
-            emptyGameObj.transform.position = new Vector3(float.Parse(data_values[0]), float.Parse(data_values[1]), float.Parse(data_values[2]));
+            emptyGameObj.transform.position = new Vector3(x, y, z);
             
             path_objs.Add(emptyGameObj.transform);
             
