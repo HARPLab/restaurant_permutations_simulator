@@ -39,12 +39,14 @@ public class MoveOnPathScript : MonoBehaviour
             anim.SetBool("isWalking", true);
            // Debug.Log("walking");
         
-    
+            
             float distance = Vector3.Distance(PathToFollow.path_objs[CurrentWayPointID].position, transform.position);
             transform.position = Vector3.MoveTowards(transform.position, PathToFollow.path_objs[CurrentWayPointID].position, Time.deltaTime * speed);
 
             var rotation = Quaternion.LookRotation(PathToFollow.path_objs[CurrentWayPointID].position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+           
+            Debug.Log(transform.rotation.x);
 
             if(distance <= reachDistance)
             {
