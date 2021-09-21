@@ -10,11 +10,15 @@ public class MoveOnPathScript : MonoBehaviour
     
     public int CurrentWayPointID = 0;
     public float speed;
-    private float reachDistance = 0.5f;
-    public float rotationSpeed = 5.0f;
+    public float rotationSpeed = 10.0f;
     public string pathName;
     private Animator anim;
     private int stage;
+    float current_speed = 0f;
+    int substep_index = 0;
+    float timer = 0f;
+
+    public int num_steps = 10;
     
     Vector3 last_position;
     Vector3 current_position;
@@ -28,34 +32,43 @@ public class MoveOnPathScript : MonoBehaviour
         
         
         PathToFollow = GameObject.Find(pathName).GetComponent<EditPathScript>();
+        CurrentWayPointID = 1;
         last_position = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer = timer + Time.deltaTime;
+
         //while the server is moving
         if(stage == 1){
             anim.SetBool("isWalking", true);
            // Debug.Log("walking");
         
+            current_speed = (Vector3.Distance(PathToFollow.path_objs[CurrentWayPointID].position, PathToFollow.path_objs[CurrentWayPointID - 1].position) / (num_steps * Time.deltaTime));
             
             float distance = Vector3.Distance(PathToFollow.path_objs[CurrentWayPointID].position, transform.position);
-            transform.position = Vector3.MoveTowards(transform.position, PathToFollow.path_objs[CurrentWayPointID].position, Time.deltaTime * speed);
+            transform.position = Vector3.MoveTowards(transform.position, PathToFollow.path_objs[CurrentWayPointID].position, Time.deltaTime * current_speed);
 
             var rotation = Quaternion.LookRotation(PathToFollow.path_objs[CurrentWayPointID].position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-           
-            Debug.Log(transform.rotation.x);
+            transform.rotation = rotation; //Quaternion.Slerp(transform.rotation, rotation, 1); //Time.deltaTime * rotationSpeed);
+            
 
-            if(distance <= reachDistance)
+            // Debug.Log(transform.rotation.x);
+            substep_index++;
+            if(substep_index >= num_steps) //distance <= reachDistance
             {
                 CurrentWayPointID++;
+                substep_index = 0;
+                Debug.Log(timer);
             }
             
             if(CurrentWayPointID >= PathToFollow.path_objs.Count)
             {
                 stage = 2;
+                Debug.Log("Finished at!");
+                Debug.Log(timer);
             }
         }
         
