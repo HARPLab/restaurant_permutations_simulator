@@ -61,7 +61,7 @@ public class MoveOnPathScript : MonoBehaviour
             {
                 CurrentWayPointID++;
                 substep_index = 0;
-                Debug.Log(timer);
+                Debug.Log("Printing timestep of " + timer);
             }
             
             if(CurrentWayPointID >= PathToFollow.path_objs.Count)
