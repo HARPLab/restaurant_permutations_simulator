@@ -16,7 +16,9 @@ public class EditPathScript : MonoBehaviour
     
     void ReadCSVFile()
     {
-        StreamReader strReader = new StreamReader("Assets/Scripts/TesterWaypoints.csv");
+        // 1005-257-180-omni
+        StreamReader strReader = new StreamReader("Assets/Scripts/1005-257-180-e.csv"); 
+        // 1005-617-0-omniscient
         bool endOfFile = false;
         int i = 0;
         while(!endOfFile)
@@ -32,13 +34,13 @@ public class EditPathScript : MonoBehaviour
             GameObject emptyGameObj = new GameObject("PathPoint" + i.ToString());
             emptyGameObj.transform.parent = this.gameObject.transform;
             
-            Debug.Log("here" + data_values[0]);
+            // Debug.Log("here" + data_values[0]);
             float x = float.Parse(data_values[0]);
-            Debug.Log(x);
+            // Debug.Log(x);
             float y = float.Parse(data_values[1]);
-            Debug.Log(y);
+            // Debug.Log(y);
             float z = float.Parse(data_values[2]);
-            Debug.Log(z);
+            // Debug.Log(z);
             
             //need to convert data_values into something
             emptyGameObj.transform.position = new Vector3(x, y, z);
@@ -48,6 +50,7 @@ public class EditPathScript : MonoBehaviour
             
             Debug.Log(data_values[0].ToString() + " " + data_values[1].ToString() + " " + data_values[2].ToString() );
         }
+        // Debug.Log(Time.frameCount.ToString() + "= stop time")
     }
     
     
