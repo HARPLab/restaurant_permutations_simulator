@@ -16,7 +16,7 @@ public class ReadCSV : MonoBehaviour
     void ReadCSVFile()
     {
         Debug.Log("Start");
-        StreamReader strReader = new StreamReader("Assets/Scripts/TesterWaypoints.csv");
+        StreamReader strReader = new StreamReader("Assets/Scripts/triangular.csv");
         bool endOfFile = false;
         while(!endOfFile)
         {
