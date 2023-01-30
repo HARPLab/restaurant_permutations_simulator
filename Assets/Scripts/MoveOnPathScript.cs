@@ -52,7 +52,7 @@ public class MoveOnPathScript : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, PathToFollow.path_objs[CurrentWayPointID].position, Time.deltaTime * current_speed);
 
             var rotation = Quaternion.LookRotation(PathToFollow.path_objs[CurrentWayPointID].position - transform.position);
-            transform.rotation = rotation; //Quaternion.Slerp(transform.rotation, rotation, 1); //Time.deltaTime * rotationSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, .5f); //Time.deltaTime * rotationSpeed);
             
 
             // Debug.Log(transform.rotation.x);
